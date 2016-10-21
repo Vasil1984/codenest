@@ -23,7 +23,9 @@
 		        		<td style="width:15%">{{$task->created_at}}</td>
 		        		<td class="flag" style="width:15%"><input type="checkbox" data-flag="status" data-url="/lists/{{$task->id}}/ajax" 
 		        		@if($task->status=='readed')checked="checked">@endif</td>
+		        		@if($task->delete == '0')
 		        		<td style="width:35%"><a href="/tasks/{{$task->id}}/delete">delete</a></td>
+		        		@endif
 		        	 <tr> 
 		        	 @endforeach
 		        	<!--  <input type="checkbox" data-flag="status" data-url="http://kraktruck.localhost/manager/handle/flag/messages/2" checked="checked"> -->

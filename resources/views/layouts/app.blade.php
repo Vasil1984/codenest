@@ -40,6 +40,9 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <a class="navbar-brand" href="{{ url('/lists') }}">Lists</a>
+                    @if(Auth::user()->role == 1)
+                        <a class="navbar-brand" href="{{ url('/admin/tasks') }}">Admin</a>
+                    @endif
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

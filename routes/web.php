@@ -48,6 +48,9 @@ Route::get('/lists/{id}/delete', 'ListController@destroy');
 Route::get('/tasks/{id}/delete', 'TaskController@destroy');
 
 
+// admin
+
+Route::get('/admin/tasks', 'TaskController@index')->middleware('AuthUser');
 
 //Route::get('/lists/{id}/edit', 'ListController@edit');
 

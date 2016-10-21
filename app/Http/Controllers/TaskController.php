@@ -20,6 +20,14 @@ class TaskController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(){
+
+        //dd('hit delete task');
+        $tasks = Task::where('delete', 1)->get();
+        return view('adminTasks', compact('tasks'));
+    
+    }
+
     public function store(Request $request, ToDoList $todo)
     {
     	//return $todo;
@@ -37,10 +45,19 @@ class TaskController extends Controller
 
     public function destroy($id)
     {
+        //dd(Auth::user()->role);
+
         $task = Task::find($id);
-        $task->delete();
-        Session::flash('message', 'Successfully deleted the task!');
-        return back();
+        if(Auth::user()->role == 1){
+            $task->delete();
+            Session::flash('message', 'Successfully deleted the task!');
+            return back();
+        }
+            $task->delete = 1;
+            $task->update();
+            return back();
+        
+        
 
         //dd($task);
         //dd('hit destroy list');

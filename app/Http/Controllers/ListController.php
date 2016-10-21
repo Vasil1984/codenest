@@ -40,6 +40,8 @@ class ListController extends Controller
         
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -92,7 +94,7 @@ class ListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function excel(ToDoList $todo)
+    public function excel(ToDoList $todo)
     {
 
         $tasksArray = []; 
@@ -117,7 +119,7 @@ class ListController extends Controller
         return back();
     }
 
-     public function zip(ToDoList $todo)
+    public function zip(ToDoList $todo)
     {
 
         // delete existing files

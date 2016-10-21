@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->integer('to_do_list_id')->unsigned()->index();
             $table->text('description');
+            $table->integer('delete')->unsigned()->default(0);
             $table->enum('status', ['unread', 'readed'])->default('unread'); 
             $table->timestamps();
             $table->foreign('to_do_list_id')
