@@ -97,8 +97,11 @@ class ListController extends Controller
     public function excel(ToDoList $todo)
     {
 
+        //$todo = ToDoList::with('tasks')->where('id',$todo->id )->get();
+        //dd($todo);
+
         $tasksArray = []; 
-        $tasksArray[] = ['task_id', 'list_id', 'description','status','created_at', 'updated_at'];
+        $tasksArray[] = ['task_id','list_id','description','deleted','status','created_at','updated_at'];
 
         foreach ($todo->tasks as $task) {
             $tasksArray[] = $task->toArray();
@@ -129,6 +132,7 @@ class ListController extends Controller
         
         $todo = ToDoList::with('tasks')->where('id',$todo->id )->get();
         $tasks = $todo['0']->tasks;
+        //dd($tasks);
         // check for task
         if(count($tasks)<1){
             return redirect()->to('/lists');
@@ -136,7 +140,7 @@ class ListController extends Controller
 
         // prepare tasks for excel
         $tasksArray = []; 
-        $tasksArray[] = ['task_id', 'list_id', 'description','status','created_at', 'updated_at'];
+        $tasksArray[] = ['task_id','list_id','description','deleted','status','created_at','updated_at'];
         
       
         foreach ($tasks as $task) {
