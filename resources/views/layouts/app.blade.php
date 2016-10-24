@@ -55,16 +55,15 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <a class="navbar-brand" href="{{ url('/lists') }}">Lists</a>
+                        <a class="navbar-brand" href="{{ url('/lists') }}">Lists</a>
                             @if(Auth::user()->role == 1)
-                                <a class="navbar-brand pull-left" href="{{ url('/admin/tasks') }}">Admin</a>
+                                <a class="navbar-brand" href="{{ url('/admin/tasks') }}">Admin</a>
                             @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                
-                                    
+
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/logout') }}"
@@ -106,7 +105,7 @@
     </div>
 
     <!-- Scripts -->
-        
+    <script src="/js/app.js"></script>
     <script src="/js/jquery-1.9.1.min.js"></script>
     <script src="/js/manager.js"></script>
 
