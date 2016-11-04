@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
+   <!--  <link href="/css/app.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{ elixir("css/app.css") }}">  
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -106,8 +106,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="/js/jquery-1.9.1.min.js"></script>
-    <script src="/js/manager.js"></script>
+    <script src="/js/vasil.js"></script>
+    <!-- <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/manager.js"></script> -->
 
 </body>
 </html>

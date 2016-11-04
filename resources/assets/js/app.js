@@ -16,5 +16,9 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#test',
+    data: {
+    	parrant_msg: 'Gosho',
+    	name: 'Vankovv'
+    }
 });

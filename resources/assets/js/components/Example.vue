@@ -6,7 +6,9 @@
                     <div class="panel-heading">Example Component</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                        I'm an example component! <br/>
+                        This is local msg  {{local_msg}}  <input v-model="local_msg"><br/>
+                        This is parrant msg  {{parrant_msg}} <input v-model="parrant_msg"> <br/>
                     </div>
                 </div>
             </div>
@@ -15,9 +17,7 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component ready.')
-        }
-    }
+export default {
+      props: ['local_msg', 'parrant_msg']
+  };
 </script>

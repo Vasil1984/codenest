@@ -70,7 +70,7 @@ class TaskController extends Controller
         //dd($data['flag']);
 
         if($data['flag'] !== 'status'){
-            dd("falg check");
+            //dd("falg check");
             return redirect()->to('lists');
         }
 
